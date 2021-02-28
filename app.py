@@ -10,6 +10,8 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 import random
 from collections import Counter
+from datetime import datetime
+
 
 app = dash.Dash(
     __name__,
@@ -25,10 +27,15 @@ DATA_PATH = BASE_PATH.joinpath("data").resolve()
 
 # read data
 df = pd.read_csv(DATA_PATH.joinpath("yotta_numbers.csv"), parse_dates=['EndingDate'], infer_datetime_format=True)
+# df['EndingDate'] = df['EndingDate'].dt.date
+# print(df.EndingDate)
+# print(df.dtypes)
 last_updated = df.EndingDate.max().date()  # store last updated date
 
+# print(last_updated)
 # filter and halve data set to recent weeks only
 mid_date = df.EndingDate.median()  # store mid-point date from data set
+# print(mid_date)
 filtered_df = df[df['EndingDate'] >= mid_date]
 
 # get count of high momentum numbers and selected yotta numbers
