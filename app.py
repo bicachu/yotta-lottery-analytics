@@ -10,7 +10,6 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 import random
 from collections import Counter
-from datetime import datetime
 
 
 app = dash.Dash(
@@ -647,7 +646,7 @@ app.layout = html.Div(
                                 'To explore the most frequent numbers and yotta balls selected, view the '
                                 'Dashboard page.   '),
                             html.Li(
-                                'To generate your own random weekly "lucky" lotto numbers  based on '
+                                'To generate your own random weekly "lucky" numbers  based on '
                                 'data analysis of the patterns observed with high and low momentum numbers, '
                                 'view the Pick Lucky # page. These numbers are picked based on the strategies '
                                 'described here. '),
