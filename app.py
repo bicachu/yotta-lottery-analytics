@@ -27,15 +27,10 @@ DATA_PATH = BASE_PATH.joinpath("data").resolve()
 
 # read data
 df = pd.read_csv(DATA_PATH.joinpath("yotta_numbers.csv"), parse_dates=['EndingDate'], infer_datetime_format=True)
-# df['EndingDate'] = df['EndingDate'].dt.date
-# print(df.EndingDate)
-# print(df.dtypes)
 last_updated = df.EndingDate.max().date()  # store last updated date
 
-# print(last_updated)
 # filter and halve data set to recent weeks only
 mid_date = df.EndingDate.median()  # store mid-point date from data set
-# print(mid_date)
 filtered_df = df[df['EndingDate'] >= mid_date]
 
 # get count of high momentum numbers and selected yotta numbers
@@ -122,7 +117,7 @@ def description_card():
     return html.Div(
         id="description-card",
         children=[
-            html.H5("Yotta Savings Winning Numbers"),
+            html.H5("Yotta Lottery Winning Numbers"),
             html.Div(
                 id="intro",
                 children="Explore past weekly numbers and yotta balls picked. Hover over each number in the heatmap to "
@@ -178,7 +173,7 @@ def generate_table_control_card():
                 id="control-desc",
                 children="Select the number of tickets you are looking to generate numbers for as well as the "
                          "corresponding approach for both daily numbers and the yotta ball. The momentum approach is "
-                         "based on the successful strategy described here.",
+                         "based on the strategy described here.",
             ),
             html.P("Number of Tickets"),
             dcc.Input(

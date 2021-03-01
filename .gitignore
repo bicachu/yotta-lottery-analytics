@@ -5,3 +5,4 @@ venv
 images/
 .idea/
 *.xlsx
+.ipynb_checkpoints/
