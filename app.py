@@ -666,7 +666,19 @@ app.layout = html.Div(
                                     html.Strong('DATA'),
                                     ' and you will get 100 free tickets for your first week!'
                                 ]
-                            )]),
+                            ),
+                            html.Br(),
+                            html.Div(
+                                children=[
+                            html.H6('Developed with: '),
+                            html.A(
+                                children=[
+                                    html.Img(
+                                        src='assets/dash-logo.png',
+                                        style={'width': '20%'}
+                                    )],
+                                href='https://plotly.com/dash/')])
+                        ]),
                     dcc.Tab(
                         label='Dashboard',
                         className='control-tab',
