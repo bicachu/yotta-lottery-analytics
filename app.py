@@ -169,11 +169,22 @@ def generate_table_control_card():
         children=[
             html.H5("Generate Your Own Lucky Tickets"),
             html.Div(
-                id="control-desc",
-                children="Select the number of tickets you are looking to generate numbers for as well as the "
+                id='control-desc',
+                children=[
+                    "Select the number of tickets you are looking to generate numbers for as well as the "
                          "corresponding approach for both daily numbers and the yotta ball. The momentum approach is "
-                         "based on the strategy described here.",
+                         "based on the strategy described ",
+                    html.A(
+                        children=['here.'],
+                        href='https://pub.towardsai.net/i-used-data-analytics-to-play-the-free-lottery-and-won-578e618e2711'),
+                ]
             ),
+            # html.Div(
+            #     id="control-desc",
+            #     children="Select the number of tickets you are looking to generate numbers for as well as the "
+            #              "corresponding approach for both daily numbers and the yotta ball. The momentum approach is "
+            #              "based on the strategy described here.",
+            # ),
             html.P("Number of Tickets"),
             dcc.Input(
                 id='n-tickets-input',
@@ -648,8 +659,8 @@ app.layout = html.Div(
                             html.Li(
                                 'To generate your own random weekly "lucky" numbers  based on '
                                 'data analysis of the patterns observed with high and low momentum numbers, '
-                                'view the Pick Lucky # page. These numbers are picked based on the strategies '
-                                'described here. '),
+                                'view the Pick Lucky # page.'),
+# 'These numbers are picked based on the strategies described here.
                             html.Br(),
                             html.Div(
                                 children=[
