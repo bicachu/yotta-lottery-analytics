@@ -11,7 +11,6 @@ import plotly.graph_objects as go
 import random
 from collections import Counter
 
-
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
@@ -172,19 +171,13 @@ def generate_table_control_card():
                 id='control-desc',
                 children=[
                     "Select the number of tickets you are looking to generate numbers for as well as the "
-                         "corresponding approach for both daily numbers and the yotta ball. The momentum approach is "
-                         "based on the strategy described ",
+                    "corresponding approach for both daily numbers and the yotta ball. The momentum approach is "
+                    "based on the strategy described ",
                     html.A(
                         children=['here.'],
                         href='https://pub.towardsai.net/i-used-data-analytics-to-play-the-free-lottery-and-won-578e618e2711'),
                 ]
             ),
-            # html.Div(
-            #     id="control-desc",
-            #     children="Select the number of tickets you are looking to generate numbers for as well as the "
-            #              "corresponding approach for both daily numbers and the yotta ball. The momentum approach is "
-            #              "based on the strategy described here.",
-            # ),
             html.P("Number of Tickets"),
             dcc.Input(
                 id='n-tickets-input',
@@ -657,16 +650,21 @@ app.layout = html.Div(
                                 'To explore the most frequent numbers and yotta balls selected, view the '
                                 'Dashboard page.   '),
                             html.Li(
-                                'To generate your own random weekly "lucky" numbers  based on '
-                                'data analysis of the patterns observed with high and low momentum numbers, '
-                                'view the Pick Lucky # page.'),
-# 'These numbers are picked based on the strategies described here.
+                                children=['To generate your own random weekly "lucky" numbers  based on '
+                                          'data analysis of the patterns observed ',
+                                          html.A(
+                                              children=['here,'],
+                                              href='https://pub.towardsai.net/i-used-data-analytics-to-play-the-free-lottery-and-won-578e618e2711'),
+                                          ' view the Pick Lucky # page.'],
+                                style={'display': 'flex-inline',
+                                       'flex-direction': 'row'},
+                            ),
                             html.Br(),
                             html.Div(
                                 children=[
-                                    'For more information about Yotta Savings, view their website ',
+                                    'For more information about Yotta Savings, view their ',
                                     html.A(
-                                        children=['here.'],
+                                        children=['website.'],
                                         href='https://www.withyotta.com/'),
                                     html.Br(),
                                     ' And ',
@@ -681,14 +679,14 @@ app.layout = html.Div(
                             html.Br(),
                             html.Div(
                                 children=[
-                            html.H6('Developed with: '),
-                            html.A(
-                                children=[
-                                    html.Img(
-                                        src='assets/dash-logo.png',
-                                        style={'width': '20%'}
-                                    )],
-                                href='https://plotly.com/dash/')])
+                                    html.H6('Developed with: '),
+                                    html.A(
+                                        children=[
+                                            html.Img(
+                                                src='assets/dash-logo.png',
+                                                style={'width': '20%'}
+                                            )],
+                                        href='https://plotly.com/dash/')])
                         ]),
                     dcc.Tab(
                         label='Dashboard',
