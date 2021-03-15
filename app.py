@@ -203,7 +203,7 @@ def generate_table_control_card():
                     {'label': 'Random',
                      'value': 'RAN',
                      'title': 'This approach selects numbers completely randomly - '
-                              'same approach the Yotta Savings app uses. '
+                              'same approach the Yotta Savings app uses '
                      }],
                 value='MOM',
                 placeholder='Select a strategy for picking daily first 6 numbers'
@@ -251,12 +251,12 @@ def generate_table_control_card():
                     {'label': 'Only Non-Selected Numbers',
                      'value': 'ONLY-NON',
                      'title': 'This approach only selects from numbers that have never been '
-                              'picked as Yotta Ball before. '
+                              'picked as Yotta Ball before '
                      },
                     {'label': 'Random',
                      'value': 'RAN',
                      'title': 'This approach selects Yotta ball number completely randomly - '
-                              'same approach the Yotta Savings app uses. '
+                              'same approach the Yotta Savings app uses '
                      }],
                 value='FAV-NON',
                 placeholder='Select a strategy for picking the Yotta Ball'
